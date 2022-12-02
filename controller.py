@@ -28,7 +28,7 @@ class Controller(QMainWindow, Ui_MainWindow):
             self.label_output.setText('Please enter a number for all text boxes')
         else:
             output = area_func(self.comboBox_shapes.currentIndex(), value_1, value_2)
-            self.label_output.setText(f"Area = "
+            self.label_output.setText(f"Area:\n"
                                       f"{remove_zeros(output)}")
 
     def perim(self):
@@ -46,7 +46,7 @@ class Controller(QMainWindow, Ui_MainWindow):
             self.label_output.setText('Please enter a number for all text boxes')
         else:
             output = str(perimeter_func(self.comboBox_shapes.currentIndex(), value_1, value_2, value_3))
-            self.label_output.setText(f"Perimeter = "
+            self.label_output.setText(f"Perimeter:\n"
                                       f"{remove_zeros(output)}")
 
     def combobox_update(self):
