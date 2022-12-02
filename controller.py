@@ -3,6 +3,12 @@ from view import *
 from functions import *
 
 
+def remove_zeros(number):
+    string = str(number)
+    return string.rstrip(
+        '0').rstrip('.') if '.' in string else string
+
+
 class Controller(QMainWindow, Ui_MainWindow):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -21,8 +27,9 @@ class Controller(QMainWindow, Ui_MainWindow):
         except ValueError:
             self.label_output.setText('Please enter a number for all text boxes')
         else:
+            output = area_func(self.comboBox_shapes.currentIndex(), value_1, value_2)
             self.label_output.setText(f"Area = "
-                                      f"{area_func(self.comboBox_shapes.currentIndex(), value_1, value_2)}")
+                                      f"{remove_zeros(output)}")
 
     def perim(self):
         try:
@@ -38,8 +45,9 @@ class Controller(QMainWindow, Ui_MainWindow):
         except ValueError:
             self.label_output.setText('Please enter a number for all text boxes')
         else:
+            output = str(perimeter_func(self.comboBox_shapes.currentIndex(), value_1, value_2, value_3))
             self.label_output.setText(f"Perimeter = "
-                                      f"{perimeter_func(self.comboBox_shapes.currentIndex(), value_1, value_2, value_3)}")
+                                      f"{remove_zeros(output)}")
 
     def combobox_update(self):
         match self.comboBox_shapes.currentIndex():
