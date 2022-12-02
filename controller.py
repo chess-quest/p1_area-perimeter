@@ -18,16 +18,28 @@ class Controller(QMainWindow, Ui_MainWindow):
                 value_2 = float(self.lineEdit_dimension_2.text())
             else:
                 value_2 = 0
-        except ValueError: #figure out what error to look for!
-            print('error')
-        except:
-            print('help')
+        except ValueError:
+            self.label_output.setText('Please enter a number for all text boxes')
         else:
             self.label_output.setText(f"Area = "
                                       f"{area_func(self.comboBox_shapes.currentIndex(), value_1, value_2)}")
 
     def perim(self):
-        return
+        try:
+            value_1 = float(self.lineEdit_dimension_1.text())
+            if self.lineEdit_dimension_2.isEnabled():
+                value_2 = float(self.lineEdit_dimension_2.text())
+            else:
+                value_2 = 0
+            if self.lineEdit_dimension_3.isEnabled():
+                value_3 = float(self.lineEdit_dimension_3.text())
+            else:
+                value_3 = 0
+        except ValueError:
+            self.label_output.setText('Please enter a number for all text boxes')
+        else:
+            self.label_output.setText(f"Perimeter = "
+                                      f"{perimeter_func(self.comboBox_shapes.currentIndex(), value_1, value_2, value_3)}")
 
     def combobox_update(self):
         match self.comboBox_shapes.currentIndex():
@@ -75,4 +87,3 @@ class Controller(QMainWindow, Ui_MainWindow):
         self.label_dimension_1.setText("")
         self.label_dimension_2.setText("")
         self.label_dimension_3.setText("")
-
