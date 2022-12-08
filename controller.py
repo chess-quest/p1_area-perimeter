@@ -27,6 +27,9 @@ class Controller(QMainWindow, Ui_MainWindow):
         except ValueError:
             self.label_output.setText('Please enter a number for all text boxes')
         else:
+            if value_1 < 0 and self.comboBox_shapes.currentIndex() == 3:
+                self.label_output.setText('Please enter a positive number')
+                return
             output = area_func(self.comboBox_shapes.currentIndex(), value_1, value_2)
             self.label_output.setText(f"Area:\n"
                                       f"{remove_zeros(output)}")
@@ -41,6 +44,9 @@ class Controller(QMainWindow, Ui_MainWindow):
             if self.lineEdit_dimension_3.isEnabled():
                 value_3 = float(self.lineEdit_dimension_3.text())
             else:
+                if value_1 < 0 and self.comboBox_shapes.currentIndex() == 3:
+                    self.label_output.setText('Please enter a positive number')
+                    return
                 value_3 = 0
         except ValueError:
             self.label_output.setText('Please enter a number for all text boxes')
