@@ -16,7 +16,7 @@ class TestFormula(unittest.TestCase):
         self.assertAlmostEqual(functions.perimeter_func(2, 3.42, 1.29, 0), 9.42, delta=self.delta_value)
         self.assertAlmostEqual(functions.perimeter_func(4, 4.67, 1.234, 9.001), 14.905, delta=self.delta_value)
 
-        self.assertEqual(functions.perimeter_func(1, -3 , 0 , 0), -12)
+        self.assertEqual(functions.perimeter_func(1, -3, 0, 0), -12)
         self.assertEqual(functions.perimeter_func(2, -2, 3, 0), 2)
         self.assertEqual(functions.perimeter_func(2, -2, -3, 0), -10)
         self.assertEqual(functions.perimeter_func(4, -3, -7, 2), -8)
@@ -37,3 +37,6 @@ class TestFormula(unittest.TestCase):
         self.assertEqual(functions.area_func(2, -2, -3), 6)
         self.assertEqual(functions.area_func(4, -3, -7), 10.5)
 
+
+if __name__ == '__main__':
+    unittest.main()
