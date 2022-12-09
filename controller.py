@@ -2,6 +2,9 @@ from PyQt5.QtWidgets import *
 from view import *
 from functions import *
 
+QtWidgets.QApplication.setAttribute(QtCore.Qt.ApplicationAttribute.AA_EnableHighDpiScaling, True)
+QtWidgets.QApplication.setAttribute(QtCore.Qt.ApplicationAttribute.AA_UseHighDpiPixmaps, True)
+
 
 def remove_zeros(number) -> str:
     """
