@@ -1,7 +1,7 @@
 import math
 
 
-def perimeter_func(shape, value_1, value_2, value_3) -> float:
+def perimeter_func(shape: int, value_1: float, value_2: float, value_3: float) -> float:
     """
     Solves the perimeter of a shape with dimensions given by the user
     :param shape: Index of the shape from the dropdown box
@@ -21,7 +21,7 @@ def perimeter_func(shape, value_1, value_2, value_3) -> float:
             return value_3 + value_2 + value_1
 
 
-def area_func(shape, value_1, value_2) -> float:
+def area_func(shape: int, value_1: float, value_2: float) -> float:
     """"
     Solves the area of a shape with dimensions given by the user
     :param shape: Index of the shape from the dropdown box
